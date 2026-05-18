@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table, th, td {
+      border:5px solid rgb(7, 125, 221);
+    }
+    </style>
+<body>
+
+    <table style="width:100%">
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Password</th>
+          
+        </tr>
+        
+
+        {% for i in data %}
+        <tr>
+          <td>{{ i.name }}</td>
+          <td>{{i.email }}</td>
+          <td>{{ i.password }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+      <p>Login <a href="{% url 'log' %}">Log out</a></p>
+      <p>Delete <a href="{% url 'del' %}">Delete</a></p>
+      
+      
+</body>
